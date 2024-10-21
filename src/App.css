@@ -1,38 +1,108 @@
-.App {
+/* App.css */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.calculator {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width: 320px; /* Fixed width for the calculator box */
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input {
+  width: calc(100% - 20px); /* Ensures the input stays inside the box with some padding */
+  padding: 15px;
+  margin-bottom: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: right;
+  border: none;
+  border-radius: 10px;
+  background-color: #222;
+  color: #fff;
+  box-sizing: border-box; /* Prevents input overflow */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#calc-result {
+  margin-top: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #00e676;
+  height: 40px;
   display: flex;
-  flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  padding: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #444;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: #555;
+  transform: scale(1.05);
+}
+
+button:active {
+  background-color: #666;
+  transform: scale(1.02);
+}
+
+button:nth-child(4n) {
+  background-color: #ff7043; /* Special color for operators */
+}
+
+button:nth-child(4n):hover {
+  background-color: #ff5722;
+}
+
+button:nth-child(4n):active {
+  background-color: #e64a19;
+}
+
+button:nth-child(16) {
+  background-color: #00e676; /* Special color for "=" */
+}
+
+button:nth-child(16):hover {
+  background-color: #00c853;
+}
+
+button:nth-child(16):active {
+  background-color: #00a152;
+}
+
+button:nth-child(14) {
+  background-color: #f44336; /* Special color for "C" */
+}
+
+button:nth-child(14):hover {
+  background-color: #d32f2f;
+}
+
+button:nth-child(14):active {
+  background-color: #b71c1c;
 }
